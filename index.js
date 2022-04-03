@@ -9,9 +9,10 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 // const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
 const path =require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 
 dotenv.config();

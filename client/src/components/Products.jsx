@@ -22,9 +22,8 @@ const Products = ({ cat, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          cat
-            ? `/api/products?category=${cat}`
-            : "/api/products"
+          
+             "/api/products"
         );
 
         setProducts(res.data);

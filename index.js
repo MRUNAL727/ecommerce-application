@@ -11,7 +11,7 @@ const orderRoute = require("./routes/order");
 const cors = require("cors");
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
-cont path =require('path');
+const path =require('path');
 
 
 dotenv.config();

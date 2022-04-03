@@ -10,12 +10,12 @@ const orderRoute = require("./routes/order");
 // const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 const path =require('path');
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 
 
 dotenv.config();
+__dirname = path.resolve()
+
 
 mongoose
   .connect(process.env.MONGO_URL)

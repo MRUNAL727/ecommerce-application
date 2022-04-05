@@ -10,6 +10,7 @@ const orderRoute = require("./routes/order");
 // const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 const path =require('path');
+const Product = require("./models/Product");
 
 
 

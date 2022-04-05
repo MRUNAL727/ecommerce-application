@@ -47,7 +47,7 @@ app.get('/', async(req,res)=>{
    const products = await Product.find();
   res.send(products)
 })
-app.use(express.urlencoded({extended: true}))
+// app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

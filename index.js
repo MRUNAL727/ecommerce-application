@@ -41,6 +41,11 @@ mongoose
       response.sendFile(path.resolve(__dirname, 'client', "build", "index.html"))
     })
   } 
+
+app.get('/', (req,res)=>{
+   const products = await Product.find();
+  res.send(products)
+})
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use("/api/auth", authRoute);

@@ -43,7 +43,7 @@ mongoose
     })
   } 
 
-app.get('/', (req,res)=>{
+app.get('/', async(req,res)=>{
    const products = await Product.find();
   res.send(products)
 })

@@ -24,14 +24,15 @@ mongoose
     console.log(err);
   });
 
-  var corsOptions = {
-    origin: 'https://git.heroku.com/wejk.git',  
-    // "origin":'http://localhost:3000',
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-    methods: "GET, PUT, POST, DELETE"
-  }
+//   var corsOptions = {
+//     origin: 'https://git.heroku.com/wejk.git',  
+//     // "origin":'http://localhost:3000',
+//     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+//     methods: "GET, PUT, POST, DELETE"
+//   }
 
-  app.use(cors(corsOptions))
+//   app.use(cors(corsOptions))
+app.use(cors())
 
   if(process.env.NODE_ENV= 'production'){
     app.use(express.static(path.join( __dirname ,"/client/build")))

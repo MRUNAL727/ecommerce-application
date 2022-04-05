@@ -28,7 +28,7 @@ const Products = ({ cat, filters, sort }) => {
     getProducts();
   }, []);
 
-  console.log(JSON.parse(products));
+  console.log(products)
   useEffect(() => {
     cat && 
       setFilteredProducts(

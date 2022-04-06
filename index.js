@@ -44,6 +44,7 @@ app.use(cors())
   } 
 
 app.get('/', async(req,res)=>{
+  console.log('in /')
    const products = await Product.find();
   res.send(products)
 })

@@ -37,11 +37,6 @@ mongoose
 // app.use(cors())
 
 
-app.get('/', async(req,res)=>{
-  console.log('in /')
-   const products = await Product.find();
-  res.send(products)
-})
 // app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use("/api/auth", authRoute);

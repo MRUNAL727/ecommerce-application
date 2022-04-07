@@ -9,15 +9,10 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 // const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
-<<<<<<< HEAD
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-import path from 'path';
-=======
 const path =require('path');
 const Product = require("./models/Product");
 
->>>>>>> origin/main
+
 
 
 dotenv.config();
@@ -41,13 +36,6 @@ mongoose
   app.use(cors(corsOptions))
 // app.use(cors())
 
-  if(process.env.NODE_ENV= 'production'){
-    app.use(express.static(path.join( __dirname ,"/client/build")))
-    console.log('production')
-     app.get("*", (req,response)=>{
-      response.sendFile(path.resolve(__dirname, 'client', "build", "index.html"))
-    })
-  } 
 
 app.get('/', async(req,res)=>{
   console.log('in /')
@@ -62,6 +50,15 @@ app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 // app.use("/api/checkout", stripeRoute);
+
+
+  if(process.env.NODE_ENV= 'production'){
+    app.use(express.static(path.join( __dirname ,"/client/build")))
+    console.log('production')
+     app.get("*", (req,response)=>{
+      response.sendFile(path.resolve(__dirname, 'client', "build", "index.html"))
+    })
+  } 
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");

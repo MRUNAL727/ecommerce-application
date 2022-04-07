@@ -60,6 +60,8 @@ router.get("/find/:id", async (req, res) => {
 router.get("/", async (req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
+    console.log('hey thre')
+
   try {
     let products;
 
@@ -74,7 +76,10 @@ router.get("/", async (req, res) => {
     } else {
       products = await Product.find();
     }
-    res.status(200).json(products);
+    console.log(products)
+//     res.status(200).json("hey")
+    res.writeHead(200, {'Content-Type': 'text/event-stream'});
+    res.status(200).send(products);
   } catch (err) {
     res.status(500).json(err);
   }
